@@ -35,29 +35,39 @@ body
     display: flex;
     width: 25%;
     height: 80vh;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 10px;
+}
+
+.pages::-webkit-scrollbar {
+    display: none;
 }
 
 .pages img
 {
-    width: 98%;
-    border: 1px solid;
-    margin: 10px;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: 10px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     flex-shrink: 0;
 }
 
 @media screen and (max-width:1200px) {
-    .pages { width: 32%; }
+    .pages { width: 40%; }
 }
 
-@media screen and (max-width:1000px) {
-    .pages { width: 45%; }
+@media screen and (max-width:900px) {
+    .pages { width: 60%; }
 }
 
-@media screen and (max-width:700px) {
-    .pages { width: 95%; padding: 4px; }
+@media screen and (max-width:600px) {
+    .pages { width: 90%; }
+    .title { font-size: 2.5rem; }
 }

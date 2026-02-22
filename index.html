@@ -36,39 +36,6 @@
 
     <script>
 const div = document.getElementById('pages');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-div.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX;
-    scrollLeft = div.scrollLeft;
-});
-div.addEventListener('mouseleave', () => isDown = false);
-div.addEventListener('mouseup', () => isDown = false);
-div.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX;
-    const walk = (x - startX) * 2;
-    div.scrollLeft = scrollLeft - walk;
-});
-
-div.addEventListener('touchstart', (e) => {
-    isDown = true;
-    startX = e.touches[0].pageX;
-    scrollLeft = div.scrollLeft;
-});
-div.addEventListener('touchend', () => isDown = false);
-div.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 2;
-    div.scrollLeft = scrollLeft - walk;
-});
-
 window.onload = () => div.scrollLeft = div.scrollWidth;
     </script>
 </body>
