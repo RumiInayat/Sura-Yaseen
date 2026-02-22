@@ -22,17 +22,6 @@ body
    
 }
 
-.title
-{
-   color: #fff;
-   font-size: 3rem;
-   font-weight: 700;
-   font-family: 'Amiri', serif;
-   text-align: center;
-   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-   margin-bottom: 20px;
-   letter-spacing: 2px;
-}
 
 .pages
 {
