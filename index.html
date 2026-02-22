@@ -7,11 +7,6 @@
         initial-scale=1.0">
     <title>Sura Yaaseen App </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -32,11 +27,53 @@
             <img src="images/page_2.jpg" draggable="false">
             <img src="images/page_1.jpg" draggable="false">
         </div>
+        <br><br>
+        <span class="msg">Slide Left</span>
     </div>
 
+
     <script>
+        
+        let isDown = false;
+let startX;
+let scrollLeft;
 const div = document.getElementById('pages');
-window.onload = () => div.scrollLeft = div.scrollWidth;
+
+div.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX;
+    scrollLeft = div.scrollLeft;
+});
+div.addEventListener('mouseleave', () => isDown = false);
+div.addEventListener('mouseup', () => isDown = false);
+div.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - startX) * 2.3;
+    div.scrollLeft = scrollLeft - walk;
+});
+
+// touch events
+div.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX;
+    scrollLeft = div.scrollLeft;
+});
+div.addEventListener('touchend', () => isDown = false);
+div.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2.3;
+    div.scrollLeft = scrollLeft - walk;
+});
+
+window.onload = () => {
+    const div = document.getElementById('pages');
+    div.scrollLeft = div.scrollWidth;
+};
+
     </script>
 </body>
 
