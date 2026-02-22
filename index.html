@@ -32,17 +32,14 @@
             <img src="images/page_2.jpg" draggable="false">
             <img src="images/page_1.jpg" draggable="false">
         </div>
-        <br><br>
-        <span class="msg">Slide Left</span>
     </div>
 
-
     <script>
-        
-        let isDown = false;
+const div = document.getElementById('pages');
+
+let isDown = false;
 let startX;
 let scrollLeft;
-const div = document.getElementById('pages');
 
 div.addEventListener('mousedown', (e) => {
     isDown = true;
@@ -55,11 +52,10 @@ div.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX;
-    const walk = (x - startX) * 2.3;
+    const walk = (x - startX) * 2;
     div.scrollLeft = scrollLeft - walk;
 });
 
-// touch events
 div.addEventListener('touchstart', (e) => {
     isDown = true;
     startX = e.touches[0].pageX;
@@ -68,17 +64,12 @@ div.addEventListener('touchstart', (e) => {
 div.addEventListener('touchend', () => isDown = false);
 div.addEventListener('touchmove', (e) => {
     if (!isDown) return;
-    e.preventDefault();
     const x = e.touches[0].pageX;
-    const walk = (x - startX) * 2.3;
+    const walk = (x - startX) * 2;
     div.scrollLeft = scrollLeft - walk;
 });
 
-window.onload = () => {
-    const div = document.getElementById('pages');
-    div.scrollLeft = div.scrollWidth;
-};
-
+window.onload = () => div.scrollLeft = div.scrollWidth;
     </script>
 </body>
 
