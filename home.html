@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sura Yaseen - Read And Listen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+ 
+<div class="hero">
+    <div class="salwaat">
+        <marquee direction="right" style="font-family: Microsoft Uighur;" scrollamount="3">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ .إِنَّكَ حَمِيدٌ مَجِيدٌ __ اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ، وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ .إِنَّكَ حَمِيدٌ مَجِيدٌ</marquee>
+    </div>
+    <div class="btns">
+        <button class="home_btns" onclick="location.href='read.html'"> Read Yaseen</button>
+        <button class="home_btns" onclick="location.href='listen.html'"> Listen Yaseen</button>
+    </div>
+</div>
+       
+    </center>
+
+    <audio id="bgAudio" src="audio/durood.MP3" loop preload="auto"></audio>
+    <script>
+        const audio = document.getElementById('bgAudio');
+        audio.addEventListener('canplaythrough', () => audio.play());
+    </script>
+</body>
+</html>

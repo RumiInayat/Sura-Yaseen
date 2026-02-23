@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;600&display=swap');
+
 *
 {
     list-style: none;
@@ -8,8 +10,8 @@
 
 body
 {
-    background-color: rgb(116 150 1);
-
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -28,14 +30,15 @@ body
 .salwaat{
     width: 100%;
     height: 50px;
-    background-color: rgba(21, 80, 29, 0.692);
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     margin: 10px;
     position: relative;
     top: -10%;
-    color: white;
+    color: #ffd700;
     font-size: xx-large;
+    font-family: 'Amiri', serif;
 }
 
 .home_btns
@@ -45,10 +48,19 @@ body
     margin: 10px;
     border: none;
     outline: none;
-    background: rgba(11, 88, 11, 0.705);
-    color: white;
+    background: #ffd700;
+    color: #1e3c72;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home_btns:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 
@@ -167,12 +179,20 @@ audio::-webkit-media-controls-enclosure {
 {
     width: 100px;
     height: 50px !important;
-    background-color: rgba(15, 95, 15, 0.74);
-    color: white;
-    border-radius: 5px;
-    cursor:pointer;
+    background: #ffd700;
+    color: #1e3c72;
+    border-radius: 50px;
+    cursor: pointer;
     outline: none;
     border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 
