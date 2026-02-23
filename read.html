@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0">
+    <title>Read Sura Yaaseen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="pages" id="pages">
+            <img src="images/page_14.jpg" draggable="false">
+            <img src="images/page_13.jpg" draggable="false">
+            <img src="images/page_12.jpg" draggable="false">
+            <img src="images/page_11.jpg" draggable="false">
+            <img src="images/page_10.jpg" draggable="false">
+            <img src="images/page_9.jpg" draggable="false">
+            <img src="images/page_8.jpg" draggable="false">
+            <img src="images/page_7.jpg" draggable="false">
+            <img src="images/page_6.jpg" draggable="false">
+            <img src="images/page_5.jpg" draggable="false">
+            <img src="images/page_4.jpg" draggable="false">
+            <img src="images/page_3.jpg" draggable="false">
+            <img src="images/page_2.jpg" draggable="false">
+            <img src="images/page_1.jpg" draggable="false">
+        </div>
+        <br><br>
+       
+        <button class="back" onclick="location.href='index.html'">Back</button> 
+    </div>
+
+    <script>
+        
+        let isDown = false;
+let startX;
+let scrollLeft;
+const div = document.getElementById('pages');
+
+div.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX;
+    scrollLeft = div.scrollLeft;
+});
+div.addEventListener('mouseleave', () => isDown = false);
+div.addEventListener('mouseup', () => isDown = false);
+div.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (x - startX) * 2.3;
+    div.scrollLeft = scrollLeft - walk;
+});
+
+// touch events
+div.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX;
+    scrollLeft = div.scrollLeft;
+});
+div.addEventListener('touchend', () => isDown = false);
+div.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 2.3;
+    div.scrollLeft = scrollLeft - walk;
+});
+
+window.onload = () => {
+    const div = document.getElementById('pages');
+    div.scrollLeft = div.scrollWidth;
+};
+
+    </script>
+</body>
+
+</html>

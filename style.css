@@ -9,7 +9,48 @@
 body
 {
     background-color: rgb(116 150 1);
+
 }
+
+
+.hero
+{
+    max-width: 550px;
+    height: 100vh;
+    border: 1px solid rgba(255, 255, 255, 0.437);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.salwaat{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(21, 80, 29, 0.692);
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+    top: -10%;
+    color: white;
+    font-size: xx-large;
+}
+
+.home_btns
+{
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    background: rgba(11, 88, 11, 0.705);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 
 .container
 {
@@ -70,6 +111,69 @@ body
     align-items: center;
 }
 
+  .audio
+      {
+        display: flex;
+        max-width: 550px;
+        margin-top: 4%;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 1px solid black;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+       
+
+      }
+
+      .audio img
+      {
+        width: 80%;
+        height: 80%;
+        margin-top: 10%;
+      }
+
+      .items
+      {
+        background-color: rgba(0, 0, 0, 0.532);
+        padding: 20px;
+        margin: 60px;
+        border-radius: 20px;
+        width: 90%;
+        margin-top: 5%;
+      }
+
+      .listen_text
+      {
+            color:white;
+            font-size: 50px;
+            position: relative;
+            top: -30px;
+      }
+
+        audio {
+            width: 95%;
+        }
+
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(47, 177, 108, 0.737);
+}
+
+.back
+{
+    width: 100px;
+    height: 50px !important;
+    background-color: rgba(15, 95, 15, 0.74);
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+    outline: none;
+    border: none;
+}
 
 
 
@@ -104,5 +208,12 @@ body
         height: 80vh;
         padding: 4px;
     }
+
+     .audio img
+      {
+        width: 100%;
+        height: 80%;
+        margin-top: 10%;
+      }
 
 }
